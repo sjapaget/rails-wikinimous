@@ -1,12 +1,8 @@
-<h1>All Articles</h1>
-<ul>
+<h1 class="text-white">All Articles</h1>
+<div class="list-group">
   <% @articles.each do |article| %>
-    <%= link_to article_path(article[:id]) do %>
-      <li><%= article.title %></li>
-    <% end %>
-
-
+      <%= link_to article_path(article[:id]), class: "d-flex justify-content-between text-decoration-none list-group-item list-group-item-action" do %>
+        <%= article.title %> <i class="fa-solid fa-pen-to-square"></i>
+      <% end %>
   <% end %>
-</ul>
-
-<%= link_to "New Article", new_article_path %>
+</div>
