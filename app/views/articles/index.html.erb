@@ -1,8 +1,13 @@
 <h1 class="text-white">All Articles</h1>
 <div class="list-group">
   <% @articles.each do |article| %>
-      <%= link_to article_path(article[:id]), class: "d-flex justify-content-between text-decoration-none list-group-item list-group-item-action" do %>
-        <%= article.title %> <i class="fa-solid fa-pen-to-square"></i>
-      <% end %>
+      <div class="list-group-item list-group-item-action d-flex justify-content-between">
+        <%= link_to article_path(article[:id]), class: "text-decoration-none" do %>
+          <%= article.title %>
+        <% end %>
+        <%= link_to edit_article_path(article), class: "text-decoration-none" do %>
+          <i class="fa-solid fa-pen-to-square"></i>
+        <% end %>
+      </div>
   <% end %>
 </div>
